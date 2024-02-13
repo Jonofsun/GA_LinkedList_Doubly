@@ -1,7 +1,11 @@
-﻿namespace GA_LinkedList_Doubly
+﻿namespace GA_LinkedList_Doubly_JonathanReed
 {
     internal class Program
     {
+        /* Jonathan Reed
+         * 2/12/2024
+         * 
+         */
         static void Main(string[] args)
         {
             DoublyLinkedList<int> linkedList = new DoublyLinkedList<int>();

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GA_LinkedList_Doubly
+namespace GA_LinkedList_Doubly_JonathanReed
 {
 
-    class DoublyLinkedList<T>
+    class DoublyLinkedList<T> // Utilizes generics, allowing it to store any data type.
     {
         // Nested class LinkedListNode representing elements in the doubly linked list.
         class LinkedListNode<T>
@@ -22,11 +22,13 @@ namespace GA_LinkedList_Doubly
                 Next = null;
                 Previous = null;
             }
+            // Defines the nodes of the list, each holding a value and references to both the next and previous nodes.
         }
 
         private LinkedListNode<T> head;
         private LinkedListNode<T> tail;
         private int count;
+        // to keep track of the start, end, and size of the list.
 
         public int Count
         {
@@ -41,7 +43,7 @@ namespace GA_LinkedList_Doubly
         }
 
         // Add an element to the end of the list.
-        public void Add(T value)
+        public void Add(T value) // Appends an element to the end of the list.
         {
             LinkedListNode<T> newNode = new LinkedListNode<T>(value);
 
@@ -82,10 +84,10 @@ namespace GA_LinkedList_Doubly
                 current = current.Previous;
             }
             Console.WriteLine("null");
-        }
+        } //  Traverses and prints the list in both directions.
 
         // Remove an element by value.
-        public bool Remove(T value)
+        public bool Remove(T value) // Removes the first occurrence of the specified value. It correctly updates adjacent nodes and list properties.
         {
             LinkedListNode<T> current = head;
 
@@ -109,7 +111,7 @@ namespace GA_LinkedList_Doubly
         }
 
         // Access elements by index using an indexer.
-        public T this[int index]
+        public T this[int index] // Allows direct access to elements by their index. It throws an exception for out-of-range accesses
         {
             get
             {
@@ -183,6 +185,7 @@ namespace GA_LinkedList_Doubly
         {
             InsertAtIndex(count, value);
         }
+        // These methods provide flexible insertion capabilities.
 
         // Remove an element at a specific index.
         public void RemoveAtIndex(int index)
@@ -238,9 +241,9 @@ namespace GA_LinkedList_Doubly
         {
             RemoveAtIndex(count - 1);
         }
-
+        // Corresponding methods to remove elements from specific positions.
         // Clear the entire linked list, resetting it to an empty state.
-        public void Clear()
+        public void Clear() // Resets the list to an empty state.
         {
             head = null;
             tail = null;
